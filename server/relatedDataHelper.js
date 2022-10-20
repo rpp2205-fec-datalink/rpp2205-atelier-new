@@ -53,8 +53,8 @@ const componentHelper = function(array) {
      resultArray.push(apiData.betterCall('products/'+array[i].toString()+'/styles'))
    }
  }
-  return Promise.all(resultArray.map((endpoint) => axios.default.get(endpoint.call, endpoint.options)))
-  .then(axios.default.spread((...allData) => {
+  return Promise.all(resultArray.map((endpoint) => axios.get(endpoint.call, endpoint.options)))
+  .then(axios.spread((...allData) => {
       return allData;
     })
   );

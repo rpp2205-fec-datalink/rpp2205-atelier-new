@@ -10,7 +10,7 @@ let dataCall = (id) => {
       'Authorization': `${token}`
     }
   };
-  return axios.default.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rpp/${id}`, options)
+  return axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rpp/${id}`, options)
     .then(function (response) {
       return(response.data)
     })

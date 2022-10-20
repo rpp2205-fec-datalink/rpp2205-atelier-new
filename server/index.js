@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/related', (req, res) => {
     var test = apiData.betterCall('products/'+req.query.ID+'/related');
-    return axios.default.get(test.call, test.options)
+    return axios.get(test.call, test.options)
     .then((results) => {
       return results.data
     })
@@ -46,7 +46,7 @@ app.get('/related', (req, res) => {
 
 app.get('/outfit', (req, res) => {
   return relatedGetter.ch(req.query.ID)
-  .then(axios.default.spread((...allData) => {
+  .then(axios.spread((...allData) => {
     return allData;
   }))
   .then((results) => {
