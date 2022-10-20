@@ -1,0 +1,184 @@
+#slider-container {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 460px;
+  height: 220px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.slider-content {
+  position: relative;
+  width: 390px;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.inner-id {
+  opacity: 0%;
+  size: 0px;
+}
+
+.slider-content::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-icon.left, .slider-icon.right {
+  color: black;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  position: static;
+  opacity: 0.5;
+}
+
+.slider-icon.left {
+  left: 0;
+}
+
+.slider-icon.right {
+  right: 0;
+}
+
+.slider-icon.left:hover, .slider-icon.right:hover {
+  opacity: 1;
+}
+
+.slider-card {
+  position: relative;
+  vertical-align: top;
+  height: 100%;
+  width: 120px;
+  border-radius: 10px;
+  background-color: blue;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: left;
+  box-shadow: 2px 2px 2px 2px rgb(213, 213, 213);
+}
+
+.outfit-card {
+  position: relative;
+  vertical-align: top;
+  height: 100%;
+  width: 120px;
+  border-radius: 10px;
+  background-color: rgb(161, 161, 161);
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: left;
+  box-shadow: 2px 2px 2px 2px rgb(213, 213, 213);
+}
+
+.slider-card-img {
+  width: 100%;
+  height: 60%;
+  background-color: aqua;
+  border-radius: 10px 10px 0px 0px;
+}
+
+
+.slider-card-cat {
+  position: relative;
+  left: 5px;
+  font-size: small;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: lighter;
+  color: black;
+  font-size: x-small;
+}
+
+.outfit-card-cat {
+  margin-top: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+  white-space: normal;
+  position: relative;
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: lighter;
+  font-size: large;
+  color: azure;
+  display: inline-block;
+  word-break: break-word;
+}
+
+
+.remove {
+  position: absolute;
+  border-radius: 90px;
+  left: 77%;
+  top: 1%;
+  background-color: red;
+  opacity: 75%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.empty {
+  color: black;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  position: static;
+  opacity: 0%;
+}
+
+.outfit-add {
+  color: black;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 35px;
+  top: 67px;
+}
+
+.outfit-card-price {
+  text-align: center;
+  white-space: normal;
+  font-size: medium;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  display: inline-block;
+  word-break: break-word;
+  position: absolute;
+  left: 0px;
+  top: 140px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.slider-card-title {
+  white-space: normal;
+  position: relative;
+  width: 80%;
+  left: 5px;
+  font-size: small;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: lighter;
+  color: azure;
+  display: inline-block;
+  word-break: break-word;
+}
+
+
+.slider-card-price {
+  position: relative;
+  left: 5px;
+  font-size: small;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: azure;
+}
