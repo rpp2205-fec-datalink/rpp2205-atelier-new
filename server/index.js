@@ -1,17 +1,16 @@
-// require("dotenv").config();
+
 const express = require("express");
 const path = require("path");
-// const bodyParser = require("body-parser")
 const port = 3000;
-// const cors = require("cors")
+const compression = require('compression')
 const axios = require("axios");
 const apiData = require("./apihelper.js");
 const relatedGetter = require("./relatedDataHelper.js")
 
 const app = express();
+app.use(compression());
 
-// app.use(bodyParser.json());
-// app.use(cors())
+
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
@@ -63,6 +62,10 @@ app.get('/outfit', (req, res) => {
   .catch((err) => {
     console.log(err);
   })
+})
+
+app.get('/cardRatings', (req, res) => {
+
 })
 
 

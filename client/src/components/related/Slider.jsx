@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import "./Slider.css";
+import StarReview from '../overview/StarReview.jsx'
 import noPhoto from "./noPhoto.js";
 import { MdChevronLeft, MdChevronRight} from "react-icons/md";
 
@@ -88,6 +89,7 @@ const Slider = function(props) {
                 <div className="slider-card-cat">{slide.category}</div>
                 <div className="slider-card-title">{slide.name}</div>
                 <div className="slider-card-price">{slide.price}</div>
+                <div className="slider-card-star"><StarReview ratings={slide.ratings} /></div>
               </div>
             )
         })}
