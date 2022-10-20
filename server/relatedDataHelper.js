@@ -15,7 +15,7 @@ const relatedGetter = function(array) {
         container[item.id].category = item.category;
       }
       if (container[item.id].price === undefined) {
-        container[item.id].price = item.default_price;
+        container[item.id].price = "$" + item.default_price;
       }
       if (container[item.id].type === undefined) {
         container[item.id].type = item.type;
