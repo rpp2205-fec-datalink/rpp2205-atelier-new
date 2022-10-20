@@ -59,7 +59,7 @@
   height: 100%;
   width: 200px;
   border-radius: 10px;
-  background-color: rgb(255, 202, 133);
+  background-color: rgb(255, 182, 110);
   display: inline-block;
   margin-left: 5px;
   margin-right: 5px;
@@ -73,7 +73,7 @@
   height: 100%;
   width: 200px;
   border-radius: 10px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(225, 225, 225);
   display: inline-block;
   margin-left: 5px;
   margin-right: 5px;
@@ -96,8 +96,8 @@
   font-size: small;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: lighter;
-  color: rgb(243, 243, 243);
-  text-shadow: 1px 1px rgb(122, 122, 122);
+  color: rgb(41, 41, 41);
+  text-shadow: 1px 1px rgb(255, 255, 255);
 }
 
 .outfit-card-cat {
@@ -111,8 +111,8 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: lighter;
   font-size: 30px;
-  color: azure;
-  text-shadow: 1px 1px rgb(122, 122, 122);
+  color: rgb(41, 41, 41);
+  text-shadow: 1px 1px rgb(255, 255, 255);
   display: inline-block;
   word-break: break-word;
   text-align: center;
@@ -145,7 +145,7 @@
 }
 
 .outfit-add {
-  color: rgb(255, 202, 133);
+  color: rgb(255, 182, 110);
   width: 80px;
   height: 80px;
   position: absolute;
@@ -158,7 +158,7 @@
   white-space: normal;
   font-size: medium;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: white;
+  color: rgb(41, 41, 41);
   display: inline-block;
   word-break: break-word;
   position: absolute;
@@ -166,7 +166,7 @@
   top: 250px;
   margin-left: 5px;
   margin-right: 5px;
-  text-shadow: 1px 1px rgb(122, 122, 122);
+  text-shadow: 1px 1px rgb(255, 255, 255);
 }
 
 .slider-card-title {
@@ -176,10 +176,10 @@
   left: 5px;
   font-size: medium;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: azure;
+  color: rgb(41, 41, 41);
   display: inline-block;
   word-break: break-word;
-  text-shadow: 1px 1px rgb(122, 122, 122);
+  text-shadow: 1px 1px rgb(255, 255, 255);
 }
 
 
@@ -188,8 +188,8 @@
   left: 5px;
   font-size: small;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: azure;
-  text-shadow: 1px 1px rgb(122, 122, 122);
+  color: rgb(41, 41, 41);
+  text-shadow: 1px 1px rgb(255, 255, 255);
 }
 
 .slider-card-star {
