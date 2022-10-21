@@ -64,11 +64,6 @@ app.get('/outfit', (req, res) => {
   })
 })
 
-app.get('/cardRatings', (req, res) => {
-
-})
-
-
 
 
 // calls products/ with specific product ID --> product info is returned in response.data
@@ -76,6 +71,9 @@ app.get('/products', (req, res) => {
   return apiData.dataCall('products/'+req.query.ID)
     .then((results) => {
       res.send(results);
+    })
+    .catch((err) => {
+      console.log(err);
     })
 })
 
@@ -85,6 +83,9 @@ app.get('/productsMeta', (req, res) => {
     .then((results) => {
       res.send(results);
     })
+    .catch((err) => {
+      console.log(err);
+    })
 })
 
 // calls products/:id/styles
@@ -92,6 +93,9 @@ app.get('/productsStyle', (req, res) => {
   return apiData.dataCall('products/' + req.query.ID + '/styles')
     .then((results) => {
       res.send(results);
+    })
+    .catch((err) => {
+      console.log(err);
     })
 })
 

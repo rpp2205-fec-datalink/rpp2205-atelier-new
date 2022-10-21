@@ -30,13 +30,7 @@ module.exports = {
       },
     ],
   },
-  // devServer: {
-  //   index: "",
-  //   proxy: {
-  //     context: () => true,
-  //     target: "http://localhost:3000",
-  //   },
-  // },
+
   plugins: [
 
   ],

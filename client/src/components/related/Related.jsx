@@ -127,7 +127,6 @@ class Related extends React.Component {
       }
     })
     .then((results) => {
-      console.log(results.data)
       this.setState({products: results.data})
     })
   }
