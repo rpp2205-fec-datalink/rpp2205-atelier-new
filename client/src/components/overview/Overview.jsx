@@ -3,6 +3,7 @@ import StarReview from './StarReview.jsx'
 import BasicInfo from './BasicInfo.jsx'
 import Description from './Description.jsx'
 import Picture from './Picture.jsx'
+import Styles from './Styles.jsx'
 import axios from 'axios'
 
 class Overview extends React.Component {
@@ -18,7 +19,8 @@ class Overview extends React.Component {
       activeStars: 0.25,
       ratings: {},
       starRating: [],
-      photoURL: "https://images.unsplash.com/photo-1501088430049-71c79fa3283e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+      photoURL: "https://images.unsplash.com/photo-1501088430049-71c79fa3283e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      stylePhoto: []
     }
     this.findProduct = this.findProduct.bind(this)
     this.findProductMeta = this.findProductMeta.bind(this)
@@ -82,12 +84,28 @@ class Overview extends React.Component {
       }
     })
     .then((response) => {
-      //Sorry, had to change it to photos[1] as some did not have a photos[3] and it would crash when clicked
+      var results = response.data.results
+      var photos = []
+      for (var i = 0; i < results.length; i++) {
+        var tempArray = []
+        for (var j = 0; j < results[i].photos.length; j++) {
+          tempArray.push(results[i].photos[j])
+        }
+        var tempObj = {
+          [results[i].style_id]: [...tempArray]
+        }
+        photos.push(tempObj)
+      }
+
       this.setState({
-        photoURL: response.data.results[0].photos[1].url
+        photoURL: response.data.results[0].photos[0].url,
+        stylePhoto: photos,
+        selectedStyle: response.data.results[0].style_id
       })
     })
   }
+
+
 
   render() {
     return(
@@ -99,6 +117,7 @@ class Overview extends React.Component {
           <StarReview totalStars = {this.state.totalStars} activeStars = {this.state.activeStars} ratings = {this.state.ratings}/>
           <a href="dummylink.com">Read all reviews</a>
           <Description slogan = {this.state.slogan} description = {this.state.description} />
+          <Styles stylePhoto = {this.state.stylePhoto} selectedStyle = {this.state.selectedStyle}/>
         </div>
       </form>
     )
