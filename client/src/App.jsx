@@ -51,7 +51,7 @@ class App extends React.Component {
           <Overview productId = {this.state.productId} />
         </div>
         <div>
-          <Related productId = {this.state.productId} updateMainState = {(e) => {this.updateMainState(e)}}/>
+          <Related productId = {this.state.productId} TestID="Related" updateMainState = {(e) => {this.updateMainState(e)}}/>
         </div>
       </div>
     );
