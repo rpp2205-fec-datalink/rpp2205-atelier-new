@@ -15,7 +15,7 @@ const relatedGetter = function(array) {
         container[item.id].category = item.category;
       }
       if (container[item.id].price === undefined) {
-        container[item.id].price = item.default_price;
+        container[item.id].price = "$" + item.default_price;
       }
       if (container[item.id].type === undefined) {
         container[item.id].type = item.type;
@@ -27,6 +27,10 @@ const relatedGetter = function(array) {
          containerArray.push(inner.photos[0].thumbnail_url)
         })
         container[item.product_id].image = containerArray[0];
+      }
+
+      if (item.ratings) {
+        container[item.product_id].ratings = item.ratings;
       }
 
     })
@@ -47,10 +51,12 @@ const componentHelper = function(array) {
  if (typeof array === 'string') {
   resultArray.push(apiData.betterCall('products/'+array))
   resultArray.push(apiData.betterCall('products/'+array+'/styles'))
+  resultArray.push(apiData.betterCall('reviews/meta/?product_id='+array))
  } else {
    for (var i = 0; i < array.length; i++) {
      resultArray.push(apiData.betterCall('products/'+array[i].toString()))
      resultArray.push(apiData.betterCall('products/'+array[i].toString()+'/styles'))
+     resultArray.push(apiData.betterCall('reviews/meta/?product_id='+array[i].toString()))
    }
  }
   return Promise.all(resultArray.map((endpoint) => axios.get(endpoint.call, endpoint.options)))
@@ -64,6 +70,4 @@ module.exports = {
   rg: relatedGetter,
   ch: componentHelper,
 }
-
-
 

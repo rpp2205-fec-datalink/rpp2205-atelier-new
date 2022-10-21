@@ -109,14 +109,14 @@ class Related extends React.Component {
 
   slideLeft = (id) => {
     var slider = document.getElementById(id);
-    slider.scrollLeft = slider.scrollLeft - 130;
+    slider.scrollLeft = slider.scrollLeft - 210;
 
   }
 
   slideRight = (id) => {
     var slider = document.getElementById(id);
     // console.log(slider);
-    slider.scrollLeft = slider.scrollLeft + 130;
+    slider.scrollLeft = slider.scrollLeft + 210;
   }
 
 
@@ -127,17 +127,10 @@ class Related extends React.Component {
       }
     })
     .then((results) => {
-      // console.log(results.data)
       this.setState({products: results.data})
     })
   }
 
-  // findProductStyles() {
-  //   axios.get('/productsStyle', {
-  //     params: {
-  //       ID: this.props.productId
-  //     }
-  //   })
 
 
 
