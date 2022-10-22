@@ -5,6 +5,7 @@
 import React from 'react';
 import Slider from "./Slider.jsx";
 import SliderOutfit from "./SliderOutfit.jsx";
+import Compare from "./Compare.jsx";
 import axios from "axios";
 
 
@@ -17,11 +18,14 @@ class Related extends React.Component {
       outfit: [{id: 1, image: 'https://picsum.photos/307/307', category: 'Add to Your Outfit', name: 'Add this item to your outfit collection'}],
       productId: this.props.productId,
       products: [],
+      comparing: false,
+      comparingInfo: 0,
     }
     this.slideLeft = this.slideLeft.bind(this);
     this.slideRight = this.slideRight.bind(this);
     this.addToOutfit = this.addToOutfit.bind(this);
     this.removeFromOutfit = this.removeFromOutfit.bind(this);
+    this.toggleCompare = this.toggleCompare.bind(this);
   }
 
   componentDidMount() {
@@ -131,21 +135,36 @@ class Related extends React.Component {
     })
   }
 
+  toggleCompare = function(e) {
+    e.preventDefault();
+    if (this.state.comparing) {
+      this.setState({comparing: false})
+    } else {
+      this.setState({comparingInfo: e.target.name})
+      this.setState({comparing: true})
+    }
+  }
 
 
 
   render() {
     return(
+      <>
       <form>
-          <div>Related Items</div>
+          <div style={{fontSize:"40px", fontWeight: "bold", color: "rgb(255, 182, 110)", textShadow:".5px .5px rgb(41, 41, 41)"}}>Related Items</div>
         <div id="body">
-          <Slider id={'slider'} realData={this.state.products} slideLeft={this.slideLeft} slideRight={this.slideRight} updateMainState={this.props.updateMainState}/>
+          <br></br>
+          <Slider id={'slider'} realData={this.state.products} slideLeft={this.slideLeft} slideRight={this.slideRight} updateMainState={this.props.updateMainState} compare={(e) => {this.toggleCompare(e)}}/>
         </div>
-        <div>Build Your Outfit</div>
+        <br></br>
+        <div style={{fontSize:"40px", fontWeight: "bold", color: "rgb(255, 182, 110)", textShadow:".5px .5px rgb(41, 41, 41)"}}>Build Your Outfit</div>
+        <br></br>
         <div id="body">
           <SliderOutfit realData={this.state.outfit} id={'outfit'} click={(e) => {this.addToOutfit(e)}} remove={(e) => {this.removeFromOutfit(e)}} slideLeft={this.slideLeft} slideRight={this.slideRight}/>
         </div>
       </form>
+         <Compare trigger={this.state.comparing} mainP={this.props.productId} related={this.state.comparingInfo} relatedInfo={this.state.products} click={(e) => {this.toggleCompare(e)}}><h3>This Product Compared to Main Product</h3></Compare>
+      </>
     )
   }
 }

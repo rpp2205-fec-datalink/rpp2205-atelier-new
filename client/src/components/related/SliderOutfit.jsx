@@ -90,7 +90,7 @@ const SliderOutfit = function(props) {
           }
             return (
               <div className="slider-card" key={slide.id} >
-                <button type='submit' name={slide.id} className="slider-card-img" style={{backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}} >
+                <button type='submit' name={slide.id} className="slider-card-img" style={{backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}} onClick={(e) => { e.preventDefault();}}>
                </button>
                 <div className="slider-card-cat">{slide.category}</div>
                 <div className="slider-card-title">{slide.name}</div>

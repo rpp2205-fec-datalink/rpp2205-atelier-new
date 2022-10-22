@@ -2,7 +2,8 @@ import React, { useState, useEffect} from "react";
 import "./Slider.css";
 import StarReview from '../overview/StarReview.jsx'
 import noPhoto from "./noPhoto.js";
-import { MdChevronLeft, MdChevronRight} from "react-icons/md";
+import Compare from "./Compare.jsx";
+import { MdChevronLeft, MdChevronRight, MdStars} from "react-icons/md";
 
 const Slider = function(props) {
   const [right, rightCount] = useState(0);
@@ -73,31 +74,32 @@ const Slider = function(props) {
 
 
   return (
-    <div id="slider-container">
+      <div id="slider-container">
 
-     <MdChevronLeft className={sliderLeft} onClick={() => {props.slideLeft(props.id) ; countingRight()}}/>
+      <MdChevronLeft className={sliderLeft} onClick={() => {props.slideLeft(props.id) ; countingRight()}}/>
 
-      <div className="slider-content" id={props.id}>
-        {props.realData.map((slide) => {
-          if (!slide.image) {
-            slide.image = noPhoto;
-          }
-            return (
-              <div className="slider-card" key={slide.id} >
-                <button type='submit' name={slide.id} onClick={props.updateMainState} className="slider-card-img" style={{backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}} >
-               </button>
-                <div className="slider-card-cat">{slide.category}</div>
-                <div className="slider-card-title">{slide.name}</div>
-                <div className="slider-card-price">{slide.price}</div>
-                <div className="slider-card-star"><StarReview ratings={slide.ratings} /></div>
-              </div>
-            )
-        })}
+        <div className="slider-content" id={props.id}>
+          {props.realData.map((slide) => {
+            if (!slide.image) {
+              slide.image = noPhoto;
+            }
+              return (
+                <div className="slider-card" key={slide.id} >
+                  <button type='submit' name={slide.id} onClick={props.updateMainState} className="slider-card-img" style={{backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}} >
+                </button>
+                  <div className="slider-card-cat">{slide.category}</div>
+                  <div className="slider-card-title">{slide.name}</div>
+                  <div className="slider-card-price">{slide.price}</div>
+                  <div className="slider-card-star"><StarReview ratings={slide.ratings} /></div>
+                  <MdStars className="compareButton"/>
+                  <button onClick={props.compare} className="compareButtonTwo" name={slide.id}></button>
+                </div>
+              )
+          })}
+        </div>
+
+        <MdChevronRight className={sliderRight} onClick={() => {props.slideRight(props.id) ; countingLeft()}}/>
       </div>
-
-      <MdChevronRight className={sliderRight} onClick={() => {props.slideRight(props.id) ; countingLeft()}}/>
-
-    </div>
   )
 }
 
