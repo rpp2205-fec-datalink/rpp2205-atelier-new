@@ -20,6 +20,9 @@ const relatedGetter = function(array) {
       if (container[item.id].type === undefined) {
         container[item.id].type = item.type;
       }
+      if (container[item.id].features === undefined) {
+        container[item.id].features = item.features;
+      }
 
       if (item.results) {
         var containerArray = [];

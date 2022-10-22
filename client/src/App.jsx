@@ -50,6 +50,7 @@ class App extends React.Component {
         <div>
           <Overview productId = {this.state.productId} />
         </div>
+        <br></br>
         <div>
           <Related productId = {this.state.productId} TestID="Related" updateMainState = {(e) => {this.updateMainState(e)}}/>
         </div>
