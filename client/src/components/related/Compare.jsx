@@ -4,6 +4,7 @@ import axios from 'axios';
 function Compare(props) {
 
   const [mainData, updateData] = useState([]);
+  const [mainName, updateName] = useState('name');
 
   var findProduct = function() {
     axios.get('/products', {
@@ -12,7 +13,8 @@ function Compare(props) {
       }
     })
     .then((results) => {
-      console.log(results.data.features)
+      console.log(results.data)
+      updateName(results.data.name)
       updateData(results.data.features)
     })
   }
