@@ -1,10 +1,12 @@
 import React, { useState, useEffect} from "react";
+import CompareTable from "./CompareTable.jsx";
 import axios from 'axios';
 
 function Compare(props) {
 
   const [mainData, updateData] = useState([]);
-  const [mainName, updateName] = useState('name');
+  const [relatedData, updateRelatedData] = useState([]);
+
 
   var findProduct = function() {
     axios.get('/products', {
@@ -13,37 +15,45 @@ function Compare(props) {
       }
     })
     .then((results) => {
-      console.log(results.data)
-      updateName(results.data.name)
-      updateData(results.data.features)
+      var obj = {};
+      obj.id = results.data.id;
+      obj.name = results.data.name;
+      obj.features = results.data.features;
+      updateData(obj)
     })
   }
 
+
+
+  var setUpComparisonData = function() {
+    if (props.relatedInfo.length) {
+      var containerObj =  {};
+      props.relatedInfo.map((item) => {
+        containerObj[item.id] = {
+          name: item.name,
+          features: item.features,
+        }
+      })
+      updateRelatedData(containerObj);
+    }
+  }
+
+
   useEffect(() => {
-    findProduct()
+    findProduct();
   }, [props.mainP])
+
+  useEffect(() => {
+    setUpComparisonData();
+  }, [props.relatedInfo])
 
 
   return (props.trigger) ? (
     <div className="popUp">
       <div className="innerPopUp">
+        <h1>Comparing</h1>
         <button className="popUpCloseButton" onClick={props.click}>X</button>
-        <div><h2>{Number(props.related)}</h2></div>
-        {props.relatedInfo.map((product) => {
-          if (product.id === Number(props.related)) {
-            return product.features.map((feature) => {
-              return(
-                  <div key={feature.feature}>{feature.feature} = {feature.value}</div>
-                )
-            })
-          }
-        })}
-         <div><h2>{Number(props.mainP)}</h2></div>
-        {mainData.map((feature) => {
-           return (
-            <div key={feature.feature}>{feature.feature} = {feature.value}</div>
-          )
-        })}
+        <CompareTable main={mainData} related={relatedData} current={props.related}/>
       </div>
     </div>
   ) : "";
