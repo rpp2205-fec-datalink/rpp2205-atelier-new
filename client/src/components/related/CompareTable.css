@@ -1,0 +1,53 @@
+.compareTable {
+  width: 100%;
+}
+
+.tableBody {
+  left: 150px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabelRow {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  border-color: black;
+  border-style: solid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.tableHead {
+  color:black;
+  font-size: large;
+  font-weight: bold;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.tableData {
+  font-size: medium;
+  padding: 10px;
+  border-color: black;
+  border-style: solid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.tableCat {
+  color: rgb(255, 182, 110);
+  font-size: 50px;
+  font-weight: bold;
+  padding: 10px;
+  border-color: rgb(255, 182, 110);
+  border-style: solid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

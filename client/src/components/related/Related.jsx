@@ -113,14 +113,14 @@ class Related extends React.Component {
 
   slideLeft = (id) => {
     var slider = document.getElementById(id);
-    slider.scrollLeft = slider.scrollLeft - 210;
+    slider.scrollLeft = slider.scrollLeft - 215;
 
   }
 
   slideRight = (id) => {
     var slider = document.getElementById(id);
     // console.log(slider);
-    slider.scrollLeft = slider.scrollLeft + 210;
+    slider.scrollLeft = slider.scrollLeft + 215;
   }
 
 
