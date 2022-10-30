@@ -1,4 +1,4 @@
-const apiData = require("./apihelper.js");
+const apiData = require("./apiHelper.js");
 const axios = require('axios');
 
 const relatedGetter = function(array) {
