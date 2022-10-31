@@ -46,6 +46,7 @@ var App = /*#__PURE__*/function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.updateMainState = _this.updateMainState.bind(_assertThisInitialized(_this));
+    _this.reportMetaData = _this.reportMetaData.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -65,6 +66,14 @@ var App = /*#__PURE__*/function (_React$Component) {
       this.setState({
         productId: this.state.tempId
       });
+    }
+  }, {
+    key: "reportMetaData",
+    value: function reportMetaData(e) {
+      //console.log('REF', this.newRef.current.className);
+      console.log('TARGET', e.target.className);
+      console.log('Component', e.currentTarget.className);
+      console.log('time', new Date(Date.now()));
     }
   }, {
     key: "updateMainState",
@@ -91,13 +100,29 @@ var App = /*#__PURE__*/function (_React$Component) {
         onChange: this.handleChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
         onClick: this.handleSubmit
-      }, "Submit")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_src_components_overview_Overview_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        productId: this.state.productId
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_src_components_related_Related_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, "Submit")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "Overview",
+        onClick: function onClick(e) {
+          _this2.reportMetaData(e);
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_src_components_overview_Overview_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        productId: this.state.productId,
+        onClick: function onClick(e) {
+          _this2.reportMetaData(e);
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "Related",
+        onClick: function onClick(e) {
+          _this2.reportMetaData(e);
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_src_components_related_Related_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
         productId: this.state.productId,
         TestID: "Related",
         updateMainState: function updateMainState(e) {
           _this2.updateMainState(e);
+        },
+        onClick: function onClick(e) {
+          _this2.reportMetaData(e);
         }
       })));
     }
@@ -1284,8 +1309,11 @@ var Related = /*#__PURE__*/function (_React$Component) {
           textShadow: ".5px .5px rgb(41, 41, 41)"
         }
       }, "Related Items"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        data: "Related Items",
         id: "body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Slider_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", {
+        data: "Related Items"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Slider_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         id: 'slider',
         realData: this.state.products,
         slideLeft: this.slideLeft,
@@ -1301,7 +1329,10 @@ var Related = /*#__PURE__*/function (_React$Component) {
           color: "rgb(255, 182, 110)",
           textShadow: ".5px .5px rgb(41, 41, 41)"
         }
-      }, "Build Your Outfit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      }, "Build Your Outfit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", {
+        data: "Your Outfit"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        data: "Your Outfit",
         id: "body"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SliderOutfit_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         realData: this.state.outfit,

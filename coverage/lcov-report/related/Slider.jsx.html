@@ -166,7 +166,10 @@
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -263,8 +266,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -273,7 +277,8 @@
 import "./Slider.css";
 import StarReview from '../overview/StarReview.jsx'
 import noPhoto from "./noPhoto.js";
-import { MdChevronLeft, MdChevronRight} from "react-icons/md";
+import Compare from "./Compare.jsx";
+import { MdChevronLeft, MdChevronRight, MdStars} from "react-icons/md";
 &nbsp;
 const Slider = function(props) {
   const [right, rightCount] = useState(0);
@@ -344,31 +349,32 @@ const Slider = function(props) {
 &nbsp;
 &nbsp;
   return (
-    &lt;div id="slider-container"&gt;
+      &lt;div id="slider-container"&gt;
 &nbsp;
-     &lt;MdChevronLeft className={sliderLeft} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {<span class="cstat-no" title="statement not covered" >props.slideLeft(props.id) ; <span class="cstat-no" title="statement not covered" ></span>countingRight()}</span>}/&gt;
+      &lt;MdChevronLeft className={sliderLeft} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {<span class="cstat-no" title="statement not covered" >props.slideLeft(props.id) ; <span class="cstat-no" title="statement not covered" ></span>countingRight()}</span>}/&gt;
 &nbsp;
-      &lt;div className="slider-content" id={props.id}&gt;
-        {props.realData.map((slide) =&gt; {
-          if (!slide.image) {
-            slide.image = noPhoto;
-          }
-            return (
-              &lt;div className="slider-card" key={slide.id} &gt;
-                &lt;button type='submit' name={slide.id} onClick={props.updateMainState} className="slider-card-img" style={{backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}} &gt;
-               &lt;/button&gt;
-                &lt;div className="slider-card-cat"&gt;{slide.category}&lt;/div&gt;
-                &lt;div className="slider-card-title"&gt;{slide.name}&lt;/div&gt;
-                &lt;div className="slider-card-price"&gt;{slide.price}&lt;/div&gt;
-                &lt;div className="slider-card-star"&gt;&lt;StarReview ratings={slide.ratings} /&gt;&lt;/div&gt;
-              &lt;/div&gt;
-            )
-        })}
+        &lt;div className="slider-content" id={props.id}&gt;
+          {props.realData.map((slide) =&gt; {
+            if (!slide.image) {
+              slide.image = noPhoto;
+            }
+              return (
+                &lt;div className="slider-card" key={slide.id} &gt;
+                  &lt;button type='submit' name={slide.id} onClick={props.updateMainState} className="slider-card-img" style={{backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}} &gt;
+                &lt;/button&gt;
+                  &lt;div className="slider-card-cat"&gt;{slide.category}&lt;/div&gt;
+                  &lt;div className="slider-card-title"&gt;{slide.name}&lt;/div&gt;
+                  &lt;div className="slider-card-price"&gt;{slide.price}&lt;/div&gt;
+                  &lt;div className="slider-card-star"&gt;&lt;StarReview ratings={slide.ratings} /&gt;&lt;/div&gt;
+                  &lt;MdStars className="compareButton"/&gt;
+                  &lt;button onClick={props.compare} className="compareButtonTwo" name={slide.id}&gt;&lt;/button&gt;
+                &lt;/div&gt;
+              )
+          })}
+        &lt;/div&gt;
+&nbsp;
+        &lt;MdChevronRight className={sliderRight} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {<span class="cstat-no" title="statement not covered" >props.slideRight(props.id) ; <span class="cstat-no" title="statement not covered" ></span>countingLeft()}</span>}/&gt;
       &lt;/div&gt;
-&nbsp;
-      &lt;MdChevronRight className={sliderRight} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {<span class="cstat-no" title="statement not covered" >props.slideRight(props.id) ; <span class="cstat-no" title="statement not covered" ></span>countingLeft()}</span>}/&gt;
-&nbsp;
-    &lt;/div&gt;
   )
 }
 &nbsp;
@@ -379,7 +385,7 @@ export default Slider;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-21T03:08:07.899Z
+                at 2022-10-30T04:50:33.011Z
             </div>
         <script src="../prettify.js"></script>
         <script>
