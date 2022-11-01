@@ -2,6 +2,7 @@ import React from "react"
 import "./App.css";
 import Overview from "../src/components/overview/Overview.jsx";
 import Related from "../src/components/related/Related.jsx";
+import axios from "axios";
 
 class App extends React.Component {
   constructor(props) {
@@ -31,11 +32,34 @@ class App extends React.Component {
   }
 
   reportMetaData(e) {
-    //console.log('REF', this.newRef.current.className);
-    console.log('TARGET', e.target.className);
-    console.log('Component', e.currentTarget.className);
-    console.log('time', new Date((Date.now())));
+    // console.log('TARGET', e.target.className);
+    // console.log('Component', e.currentTarget.className);
+    // console.log('time', new Date((Date.now())));
+    var element;
+    if (e.target.className.length) {
+      element = e.target.className;
+    } else {
+      element = 'outside of data area'
+    }
+    var widget = e.currentTarget.className;
+    var time = new Date((Date.now()))
 
+    axios.get('/clickTracker', {
+      params: {
+        element: element,
+        widget: widget,
+        time: time
+      }
+    })
+    .then(function (res) {
+      console.log("element: ", element);
+      console.log("widget: ", widget);
+      console.log("time: ", time);
+      console.log(res.data);
+    })
+    .catch(function (err) {
+      console.log(err.data);
+    });
   }
 
   updateMainState(e) {
