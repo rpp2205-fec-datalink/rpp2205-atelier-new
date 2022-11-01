@@ -64,6 +64,17 @@ app.get('/outfit', (req, res) => {
   })
 })
 
+app.get('/clickTracker', (req, res) => {
+  var postUrl = apiData.betterCall("interactions")
+  return axios.post(postUrl.call, req.query, postUrl.options)
+    .then((results) => {
+      res.send(results.data)
+    })
+    .catch((err) => {
+      res.send(err.data)
+    })
+})
+
 
 
 // calls products/ with specific product ID --> product info is returned in response.data

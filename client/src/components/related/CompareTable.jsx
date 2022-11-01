@@ -134,7 +134,7 @@ class CompareTable extends React.Component {
              return (
               <tr className="tabelRow" key={feature[0]}>
                 <td className="tableData">{feature[1]}</td>
-                <td className="tableData">{feature[0]}</td>
+                <td className="tableCat">{feature[0]}</td>
                 <td className="tableData">{feature[2]}</td>
               </tr>
             )
