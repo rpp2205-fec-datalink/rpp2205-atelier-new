@@ -1,4 +1,6 @@
 import React from 'react';
+import './Overview.css'
+
 
 class Styles extends React.Component {
   constructor(props) {
@@ -27,11 +29,8 @@ class Styles extends React.Component {
 
   firstThumbnail() {
     var styles = this.props.styles
-    console.log("STYLES: ", this.props.styles)
-    console.log("LENGTH: ", this.props.styles.length)
     for (var i = 0; i < styles.length; i++) {
       if(styles[i].style_id == this.props.selectedStyle) {
-        console.log("HITHITHIT: ", styles[i].style_id, this.props.selectedStyle)
         this.setState( {
           selectedStylePhotos: [...styles[i].photos]
         })
@@ -57,6 +56,7 @@ class Styles extends React.Component {
   firstThumbnailPhotos() {
     var styles = this.props.styles
     var tempFirstThumbnails = []
+    var tempStyleId = ''
     for (var i = 0; i < styles.length; i++) {
       tempFirstThumbnails.push(styles[i].photos[0]["thumbnail_url"])
     }
@@ -67,16 +67,17 @@ class Styles extends React.Component {
 
   render() {
     const { selectedStylePhotos, stylePhotos } = this.state
-    return (
-      <div>
-        <h1>Style Photos</h1>
-        {stylePhotos ? (stylePhotos.map((photo, index) => (
-          <img key={index} src={photo} alt={this.props.styles[index].style_id} onClick = {this.props.updateSelectedStyle}/>
-        )))
-        : "Loading"
-        }
-      </div>
-    )
+    if(this.props.styles) {
+      return (
+        <div className="stylePhoto">
+          {stylePhotos ? (stylePhotos.map((photo, index) => (
+            <img className="circular--square" key={index} src={photo} alt={this.props.styles[index].style_id} onClick = {this.props.updateSelectedStyle}/>
+          )))
+          : "Loading"
+          }
+        </div>
+      )
+    }
   }
 }
 

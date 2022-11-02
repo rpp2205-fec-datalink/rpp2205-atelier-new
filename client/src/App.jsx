@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      productId: 71697,
+      productId: 71701,
       tempId: 0
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -37,17 +37,17 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log("STATE PRODUCT ID: ", this.state.productId)
   }
 
   render() {
     return (
       <div className="App">
-        <div>
+        <div >
           <input value={this.state.userInput} placeholder="Product ID" onChange = {this.handleChange}></input>
           <button onClick = {this.handleSubmit}>Submit</button>
+          <h2>App.jsx Product ID: {this.state.productId}</h2>
         </div>
-        <div>
+        <div className="overview-container">
           <Overview productId = {this.state.productId} />
         </div>
         <br></br>
