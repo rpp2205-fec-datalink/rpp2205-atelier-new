@@ -10,7 +10,9 @@ class App extends React.Component {
     this.state = {
       productId: 71701,
       tempId: 0,
-      theme: "light"
+      theme: "light",
+      themeName: "Dark Mode",
+      buttonTheme: "dark"
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -77,8 +79,12 @@ class App extends React.Component {
   toggleTheme() {
     if (this.state.theme === 'light') {
       this.setState({theme: 'dark'});
+      this.setState({themeName: "Light Mode"});
+      this.setState({buttonTheme: 'light'});
     } else {
       this.setState({theme: 'light'});
+      this.setState({themeName: "Dark Mode"});
+      this.setState({buttonTheme: 'dark'});
     }
   };
 
@@ -97,7 +103,7 @@ class App extends React.Component {
         <div className="Related" onClick={(e) => {this.reportMetaData(e)}}>
           <Related productId = {this.state.productId} TestID="Related" updateMainState = {(e) => {this.updateMainState(e)}} onClick={(e) => {this.reportMetaData(e)}}/>
         </div>
-        <button onClick={this.toggleTheme}>Change Theme</button>
+        <button className={`toggle ${this.state.buttonTheme}`}onClick={this.toggleTheme}>{this.state.themeName}</button>
       </div>
     );
   }
