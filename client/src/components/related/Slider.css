@@ -177,6 +177,8 @@
 }
 
 .compareButton {
+  background-color: white;
+  color: black;
   position: absolute;
   border-radius: 90px;
   left: 83%;
