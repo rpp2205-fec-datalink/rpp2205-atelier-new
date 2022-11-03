@@ -12,8 +12,10 @@ class Description extends React.Component {
   render() {
     return(
       <div>
-        <h2>{this.props.slogan}</h2>
-        <h3>{this.props.description}</h3>
+        <div className="slogan">
+          <h2>{this.props.slogan}</h2>
+          <h3>{this.props.description}</h3>
+        </div>
       </div>
     )
   }

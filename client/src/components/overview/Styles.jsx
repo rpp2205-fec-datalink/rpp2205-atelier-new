@@ -69,12 +69,18 @@ class Styles extends React.Component {
     const { selectedStylePhotos, stylePhotos } = this.state
     if(this.props.styles) {
       return (
-        <div className="stylePhoto">
-          {stylePhotos ? (stylePhotos.map((photo, index) => (
-            <img className="circular--square" key={index} src={photo} alt={this.props.styles[index].style_id} onClick = {this.props.updateSelectedStyle}/>
-          )))
-          : "Loading"
-          }
+        <div>
+          <div>
+            <h1>Styles</h1>
+          </div>
+          <div className="stylePhoto">
+            {stylePhotos ? (stylePhotos.map((photo, index) => (
+              <img className="circular--square" key={index} src={photo} alt={this.props.styles[index].style_id} onClick = {this.props.updateSelectedStyle}/>
+            )))
+            : "Loading"
+            }
+          </div>
+
         </div>
       )
     }

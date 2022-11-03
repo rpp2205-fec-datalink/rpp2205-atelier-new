@@ -4,6 +4,7 @@ import BasicInfo from './BasicInfo.jsx'
 import Description from './Description.jsx'
 import Picture from './Picture.jsx'
 import Styles from './Styles.jsx'
+import SelectOption from './SelectOption.jsx'
 import axios from 'axios'
 import './Overview.css'
 
@@ -145,14 +146,14 @@ class Overview extends React.Component {
           </article>
           <article className = "description-container">
             <StarReview totalStars = {this.state.totalStars} activeStars = {this.state.activeStars} ratings = {this.state.ratings}/>
-            <BasicInfo category = {this.state.category} name = {this.state.name} price = {this.state.price}/>
             <a href="dummylink.com">Read all reviews</a>
+            <BasicInfo category = {this.state.category} name = {this.state.name} price = {this.state.price}/>
             <Styles styles = {this.state.styles} stylePhoto = {this.state.stylePhoto} selectedStyle = {this.state.selectedStyle}  updateSelectedStyle = {(e) => this.updateSelectedStyle(e)}/>
+            <SelectOption />
           </article>
         </div>
         <div className = "bottomHalf">
           <Description slogan = {this.state.slogan} description = {this.state.description} />
-          <div>Checkbox</div>
         </div>
       </form>
     )
