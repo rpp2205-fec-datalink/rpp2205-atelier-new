@@ -5,6 +5,7 @@ import Description from './Description.jsx'
 import Picture from './Picture.jsx'
 import Styles from './Styles.jsx'
 import axios from 'axios'
+import './Overview.css'
 
 class Overview extends React.Component {
   constructor(props) {
@@ -52,7 +53,6 @@ class Overview extends React.Component {
       }
     })
     .then((response) => {
-      // console.log("OVERVIEW RESPONSE: ", response.data.description);
       this.setState({
         name: response.data.name,
         price: "$"+response.data.default_price,
@@ -73,7 +73,6 @@ class Overview extends React.Component {
       }
     })
     .then((response) => {
-      // console.log("PRODUCT META RESPONSE: ", response.data.ratings);
       this.setState({
         ratings: response.data.ratings
       })
@@ -99,8 +98,6 @@ class Overview extends React.Component {
         }
         photos.push(tempObj)
       }
-
-      console.log(response.data.results)
       this.setState({
         styles: response.data.results,
         stylePhoto: photos,
@@ -115,7 +112,10 @@ class Overview extends React.Component {
         this.setState({
           selectedStyle: styles[i].style_id
         })
-        break;
+      } else {
+        this.setState({
+          selectedStyle: styles[0].style_id
+        })
       }
     }
   }
@@ -138,15 +138,21 @@ class Overview extends React.Component {
 
   render() {
     return(
-      <form>
-        <div>
-          <h1>Overview - Michael</h1>
-          <Picture styles = {this.state.styles} selectedStyle = {this.state.selectedStyle}/>
-          <BasicInfo category = {this.state.category} name = {this.state.name} price = {this.state.price}/>
-          <StarReview totalStars = {this.state.totalStars} activeStars = {this.state.activeStars} ratings = {this.state.ratings}/>
-          <a href="dummylink.com">Read all reviews</a>
+      <form className = "overview">
+        <div className = "topHalf">
+          <article className="photo-container">
+            <Picture styles = {this.state.styles} selectedStyle = {this.state.selectedStyle}/>
+          </article>
+          <article className = "description-container">
+            <StarReview totalStars = {this.state.totalStars} activeStars = {this.state.activeStars} ratings = {this.state.ratings}/>
+            <BasicInfo category = {this.state.category} name = {this.state.name} price = {this.state.price}/>
+            <a href="dummylink.com">Read all reviews</a>
+            <Styles styles = {this.state.styles} stylePhoto = {this.state.stylePhoto} selectedStyle = {this.state.selectedStyle}  updateSelectedStyle = {(e) => this.updateSelectedStyle(e)}/>
+          </article>
+        </div>
+        <div className = "bottomHalf">
           <Description slogan = {this.state.slogan} description = {this.state.description} />
-          <Styles styles = {this.state.styles} stylePhoto = {this.state.stylePhoto} selectedStyle = {this.state.selectedStyle}  updateSelectedStyle = {(e) => this.updateSelectedStyle(e)}/>
+          <div>Checkbox</div>
         </div>
       </form>
     )
