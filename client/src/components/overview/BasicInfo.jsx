@@ -1,4 +1,5 @@
 import React from 'react';
+import './Overview.css'
 
 class BasicInfo extends React.Component {
   // constructor(props) {
@@ -11,10 +12,10 @@ class BasicInfo extends React.Component {
 
   render() {
     return(
-      <div>
-        <h2>{this.props.category}</h2>
-        <h1>{this.props.name}</h1>
-        <h3>{this.props.price}</h3>
+      <div >
+        <h1 className = "basic-info-category">{this.props.category}</h1>
+        <h1 className = "basic-info-name">{this.props.name}</h1>
+        <h1 className = "basic-info-price">{this.props.price}</h1>
       </div>
     )
   }

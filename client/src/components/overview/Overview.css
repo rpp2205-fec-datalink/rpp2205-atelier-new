@@ -23,12 +23,65 @@ a {
   border-radius: 50%;
 }
 
-
-
 .flex {
   background-color: blue;
 }
 
+.basic-info-category {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight:normal;
+
+}
+.basic-info-name {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 40px;
+
+}
+.basic-info-price {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight:normal;
+}
+.dropdown-layout {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+}
+.dropdown-size {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 90%;
+  border: 1px solid rgba(120, 120, 120, 1);
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.4);
+}
+
+.dropdown-quantity {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 90%;
+  border: 1px solid rgba(120, 120, 120, 1);
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.4);
+}
+
+.add-to-bag {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 90%;
+  border: 1px solid rgba(120, 120, 120, 1);
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.4);
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 58%;
+}
 
 .overview-container {
   width: 100%;
