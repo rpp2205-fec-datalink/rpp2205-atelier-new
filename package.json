@@ -8,6 +8,7 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "client-dev": "npx webpack --watch",
+    "all-dev": "npx nodemon --watch server server/index.js npx webpack --watch",
     "build": "npx webpack --config webpack.config.js --watch"
   },
   "jest": {

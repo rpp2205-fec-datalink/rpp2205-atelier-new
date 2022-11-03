@@ -4,7 +4,7 @@ const path = require("path");
 const port = 3000;
 const compression = require('compression')
 const axios = require("axios");
-const apiData = require("./apihelper.js");
+const apiData = require("./apiHelper.js");
 const relatedGetter = require("./relatedDataHelper.js")
 
 const app = express();
@@ -62,6 +62,17 @@ app.get('/outfit', (req, res) => {
   .catch((err) => {
     console.log(err);
   })
+})
+
+app.get('/clickTracker', (req, res) => {
+  var postUrl = apiData.betterCall("interactions")
+  return axios.post(postUrl.call, req.query, postUrl.options)
+    .then((results) => {
+      res.send(results.data)
+    })
+    .catch((err) => {
+      res.send(err.data)
+    })
 })
 
 
