@@ -8,6 +8,7 @@ class Picture extends React.Component {
 
     }
     this.updatePhotos = this.updatePhotos.bind(this)
+    this.clickStyle = this.clickStyle.bind(this)
   }
 
   componentDidUpdate(prevProps) {
@@ -30,14 +31,24 @@ class Picture extends React.Component {
       }
     }
   }
+
+  clickStyle(e) {
+    this.setState({
+      mainPhoto: {
+        url: e.target.alt
+      }
+    })
+  }
+
   render() {
     const { selectedStylePhotos, mainPhoto } = this.state
+    console.log(this.state.mainPhoto)
     return(
       <div>
         <div className="thumbnailPhoto">
           {selectedStylePhotos ? (selectedStylePhotos.map((photo, index) => (
             <div>
-              <img key={index} src={photo["thumbnail_url"]} alt="lll" onClick = {this.clickStyle}/>
+              <img key={index} src={photo["thumbnail_url"]} alt={photo["url"]} onClick = {this.clickStyle}/>
             </div>
           )))
           : "Loading"

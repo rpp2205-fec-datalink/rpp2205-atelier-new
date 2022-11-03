@@ -94,9 +94,8 @@ class App extends React.Component {
         <div >
           <input value={this.state.userInput} placeholder="Product ID" onChange = {this.handleChange}></input>
           <button onClick = {this.handleSubmit}>Submit</button>
-          <h2>App.jsx Product ID: {this.state.productId}</h2>
         </div>
-        <div className="Overview" onClick={(e) => {this.reportMetaData(e)}}>
+        <div className="Overview" id="overview-container" onClick={(e) => {this.reportMetaData(e)}}>
           <Overview productId = {this.state.productId} onClick={(e) => {this.reportMetaData(e)}}/>
         </div>
         <br></br>
