@@ -9,12 +9,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       productId: 71701,
-      tempId: 0
+      tempId: 0,
+      theme: "light",
+      themeName: "Dark Mode",
+      buttonTheme: "dark"
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.updateMainState = this.updateMainState.bind(this)
     this.reportMetaData = this.reportMetaData.bind(this)
+    this.toggleTheme = this.toggleTheme.bind(this)
   }
 
   // Updates tempId on user input, which is then used to update productId on click
@@ -72,9 +76,21 @@ class App extends React.Component {
   componentDidMount() {
   }
 
+  toggleTheme() {
+    if (this.state.theme === 'light') {
+      this.setState({theme: 'dark'});
+      this.setState({themeName: "Light Mode"});
+      this.setState({buttonTheme: 'light'});
+    } else {
+      this.setState({theme: 'light'});
+      this.setState({themeName: "Dark Mode"});
+      this.setState({buttonTheme: 'dark'});
+    }
+  };
+
   render() {
     return (
-      <div className="App">
+      <div className={`App ${this.state.theme}`}>
         <div >
           <input value={this.state.userInput} placeholder="Product ID" onChange = {this.handleChange}></input>
           <button onClick = {this.handleSubmit}>Submit</button>
@@ -86,6 +102,7 @@ class App extends React.Component {
         <div className="Related" onClick={(e) => {this.reportMetaData(e)}}>
           <Related productId = {this.state.productId} TestID="Related" updateMainState = {(e) => {this.updateMainState(e)}} onClick={(e) => {this.reportMetaData(e)}}/>
         </div>
+        <button className={`toggle ${this.state.buttonTheme}`}onClick={this.toggleTheme}>{this.state.themeName}</button>
       </div>
     );
   }

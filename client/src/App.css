@@ -3,6 +3,21 @@
   justify-content: center;
 }
 
-#body{
+/* #body{
   background-color: white;
+} */
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+.light {
+  background-color: #fff;
+  color: #333;
+}
+
+.toggle {
+  width: 100px;
+  height: 50px;
+  border-radius: 90px;
 }
