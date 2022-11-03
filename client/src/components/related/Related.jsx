@@ -151,13 +151,13 @@ class Related extends React.Component {
     return(
       <>
       <form>
-        <div style={{fontSize:"40px", fontWeight: "bold", color: "rgb(255, 182, 110)", textShadow:".5px .5px rgb(41, 41, 41)"}}>Related Items</div>
+        <div style={{fontSize:"20px", textShadow:".5px .5px rgb(41, 41, 41)" }}>Related Items</div>
           <div data="Related Items" id="body">
               <br data="Related Items"></br>
               <Slider id={'slider'} realData={this.state.products} slideLeft={this.slideLeft} slideRight={this.slideRight} updateMainState={this.props.updateMainState} compare={(e) => {this.toggleCompare(e)}}/>
           </div>
           <br></br>
-            <div style={{fontSize:"40px", fontWeight: "bold", color: "rgb(255, 182, 110)", textShadow:".5px .5px rgb(41, 41, 41)"}}>Build Your Outfit</div>
+            <div style={{fontSize:"20px", textShadow:".5px .5px rgb(41, 41, 41)"}}>Build Your Outfit</div>
           <br data="Your Outfit"></br>
           <div data="Your Outfit" id="body">
               <SliderOutfit realData={this.state.outfit} id={'outfit'} click={(e) => {this.addToOutfit(e)}} remove={(e) => {this.removeFromOutfit(e)}} slideLeft={this.slideLeft} slideRight={this.slideRight}/>

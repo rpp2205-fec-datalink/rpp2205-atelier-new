@@ -95,10 +95,12 @@
 .slider-card {
   position: relative;
   vertical-align: top;
-  height: 100%;
+  height: 90%;
   width: 200px;
   border-radius: 10px;
-  background-color: rgb(255, 182, 110);
+  border-width: medium;
+  border-style: solid;
+  /* background-color: rgb(255, 182, 110); */
   display: inline-block;
   margin-left: 5px;
   margin-right: 5px;
@@ -109,10 +111,12 @@
 .outfit-card {
   position: relative;
   vertical-align: top;
-  height: 100%;
+  height: 90%;
   width: 200px;
   border-radius: 10px;
-  background-color: rgb(225, 225, 225);
+  border-width: medium;
+  border-style: solid;
+  /* background-color: rgb(225, 225, 225); */
   display: inline-block;
   margin-left: 5px;
   margin-right: 5px;
