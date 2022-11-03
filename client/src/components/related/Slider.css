@@ -70,8 +70,6 @@
 }
 
 .slider-icon.left, .slider-icon.right {
-  color: black;
-  background-color: white;
   height: 50px;
   width: 50px;
   border-radius: 100%;
