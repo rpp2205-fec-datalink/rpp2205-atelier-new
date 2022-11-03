@@ -24,7 +24,7 @@ a {
 }
 
 .flex {
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 .basic-info-category {
@@ -91,12 +91,12 @@ a {
 .overview {
   max-width: 1200px;
   width: 100%;
-  background-color: red;
+  /* background-color: red; */
   text-align: left;
 }
 .topHalf {
   display: flex;
-  background-color: green;
+  /* background-color: green; */
   width: 100%;
 }
 .topHalf > .photo-container {
@@ -146,6 +146,6 @@ a {
 }
 
 .bottomHalf {
-  background-color: yellow;
+  /* background-color: yellow; */
   width: 100%;
 }
