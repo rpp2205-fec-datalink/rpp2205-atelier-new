@@ -22,7 +22,7 @@
 
 .tableHead {
   color:black;
-  text-shadow: .5px .5px rgb(255, 182, 110);
+  text-shadow: .5px .5px rgb(172, 172, 172);
   font-size: large;
   font-weight: bold;
   padding: 20px;
@@ -42,7 +42,7 @@
 }
 
 .tableCat {
-  color: rgb(255, 182, 110);
+  color: rgb(93, 93, 93);
   font-size: 20px;
   font-weight: bold;
   padding: 10px;
@@ -51,5 +51,5 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  text-shadow: .5px .5px rgb(41, 41, 41);
+  text-shadow: .5px .5px rgb(0, 0, 0);
 }

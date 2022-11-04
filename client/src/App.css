@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* #body{
@@ -20,4 +21,39 @@
   width: 100px;
   height: 50px;
   border-radius: 90px;
+}
+
+
+.container {
+margin: auto;
+width: 75%;
+height: 75px;
+padding: 10px;
+position: relative;
+left: 0%;
+}
+
+.logo {
+border-radius: 50%;
+width: 170px;
+height: 170px;
+position: relative;
+left: -530px;
+top: -50px;
+}
+
+.search {
+width: 300px;
+height: 50px;
+position: relative;
+align-content: center;
+top: -120px;
+left: 940px;
+}
+
+.button {
+  color: white;
+  background-color: black;
+  border-radius: 25%;
+  width: 80px;
 }

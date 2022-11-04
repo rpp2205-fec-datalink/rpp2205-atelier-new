@@ -152,13 +152,14 @@ class Related extends React.Component {
     return(
       <>
       <form>
-        <div id="title" >Related Items</div>
+        <br></br>
+        <div id="title">Related Items</div>
           <div data="Related Items" id="body">
               <br data="Related Items"></br>
               <Slider id={'slider'} realData={this.state.products} slideLeft={this.slideLeft} slideRight={this.slideRight} updateMainState={this.props.updateMainState} compare={(e) => {this.toggleCompare(e)}}/>
           </div>
           <br></br>
-            <div id="title" >Build Your Outfit</div>
+            <div id="title">Build Your Outfit</div>
           <br data="Your Outfit"></br>
           <div data="Your Outfit" id="body">
               <SliderOutfit realData={this.state.outfit} id={'outfit'} click={(e) => {this.addToOutfit(e)}} remove={(e) => {this.removeFromOutfit(e)}} slideLeft={this.slideLeft} slideRight={this.slideRight}/>

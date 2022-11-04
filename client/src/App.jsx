@@ -91,10 +91,14 @@ class App extends React.Component {
   render() {
     return (
       <div className={`App ${this.state.theme}`}>
-        <div >
-          <input value={this.state.userInput} placeholder="Product ID" onChange = {this.handleChange}></input>
-          <button onClick = {this.handleSubmit}>Submit</button>
+        <div className="container" >
+         <img className="logo" src="https://www.linkpicture.com/q/Atelier-1.png" type="image" />
+         <div className="search">
+          <input className="input" value={this.state.userInput} onChange = {this.handleChange}></input>
+          <button className="button" onClick = {this.handleSubmit}>Search</button>
+          </div>
         </div>
+        <br></br>
         <div className="Overview" id="overview-container" onClick={(e) => {this.reportMetaData(e)}}>
           <Overview productId = {this.state.productId} onClick={(e) => {this.reportMetaData(e)}}/>
         </div>

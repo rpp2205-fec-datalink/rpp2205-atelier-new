@@ -3,7 +3,12 @@
   font-weight: bold;
   text-shadow: 1px 1px white;
   position: relative;
-  left: -275px;
+  left: 395px;
+  text-align: left;
   padding-left: 50px;
+
+}
+
+.logo {
 
 }
