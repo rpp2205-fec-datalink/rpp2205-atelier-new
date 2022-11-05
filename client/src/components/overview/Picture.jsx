@@ -66,12 +66,10 @@ class Picture extends React.Component {
 
   handleShowDialog() {
     this.setState({ isOpen: !this.state.isOpen });
-    console.log('cliked');
   };
 
   render() {
     const { selectedStylePhotos, mainPhoto, mainPhotoCarousel } = this.state
-    console.log("main photo carousel: ", mainPhotoCarousel)
     return(
       <div>
         <div className="thumbnailPhoto">

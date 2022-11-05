@@ -123,7 +123,7 @@ class Overview extends React.Component {
 
   updateSelectedStyle(e) {
     e.preventDefault();
-    console.log("CLICK TARGET: ", e.target.alt)
+    console.log("CLICK TARGET: ", e.target)
     this.setState({
       selectedStyle: e.target.alt
     })
