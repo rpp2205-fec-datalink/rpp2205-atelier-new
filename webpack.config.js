@@ -4,7 +4,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 // var BrotliGzipPlugin = require('brotli-gzip-webpack-plugin');
 // const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 module.exports = {
-  mode: "development",
+  mode: "production",
+  optimization: {
+    usedExports: true,
+  },
   entry: path.join(__dirname, "/client/src/index.jsx"),
   output: {
     path: path.join(__dirname, "/client/dist"),
