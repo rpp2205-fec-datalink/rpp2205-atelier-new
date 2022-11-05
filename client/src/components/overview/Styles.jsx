@@ -11,6 +11,7 @@ class Styles extends React.Component {
     }
     this.firstThumbnail = this.firstThumbnail.bind(this)
     this.firstThumbnailPhotos = this.firstThumbnailPhotos.bind(this)
+    this.currentStyle = this.currentStyle.bind(this)
   }
 
   // componentDiddMount() {
@@ -23,9 +24,9 @@ class Styles extends React.Component {
       this.props.selectedStyle !== prevProps.selectedStyle) {
       this.firstThumbnail()
       this.firstThumbnailPhotos()
+      this.currentStyle()
     }
   }
-
 
   firstThumbnail() {
     var styles = this.props.styles
@@ -37,20 +38,6 @@ class Styles extends React.Component {
         break;
       }
     }
-
-    // var photos = this.props.stylePhoto
-    // this.setState({
-    //   stylePhoto: photos
-    //   // selectedStyle: Object.keys(this.props.stylePhoto[0])[0]
-    // })
-    // var selectedStyle = this.props.selectedStyle.toString()
-    // for (var i = 0; i < photos.length; i++){
-    //   if(Object.keys(photos[i]).includes(selectedStyle)) {
-    //     var temp = photos[i][this.props.selectedStyle]
-    //     this.setState({selectedStylePhotos: [...temp]})
-    //     break;
-    //   }
-    // }
   }
 
   firstThumbnailPhotos() {
@@ -65,13 +52,27 @@ class Styles extends React.Component {
     })
   }
 
+  currentStyle() {
+    var styles = this.props.styles
+    for (var i=0; i < styles.length; i++) {
+      if(styles[i]["style_id"] == this.props.selectedStyle) {
+        this.setState({
+          styleName: styles[i]["name"]
+        })
+        break;
+      }
+    }
+  }
+
   render() {
-    const { selectedStylePhotos, stylePhotos } = this.state
+    const { selectedStylePhotos, stylePhotos, styleName } = this.state
+    console.log(this.props.styles)
     if(this.props.styles) {
       return (
         <div>
           <div>
-            <h1>Styles</h1>
+            <h1>STYLE > {styleName}</h1>
+            <br></br>
           </div>
           <div className="stylePhoto">
             {stylePhotos ? (stylePhotos.map((photo, index) => (

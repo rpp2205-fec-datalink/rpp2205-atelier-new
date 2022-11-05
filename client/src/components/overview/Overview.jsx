@@ -108,14 +108,18 @@ class Overview extends React.Component {
   }
 
   findDefaultStyle(styles) {
+    console.log("STYLES: ", styles)
     for (var i = 0; i < styles.length; i++) {
       if(styles[i]["default?"] === true) {
         this.setState({
-          selectedStyle: styles[i].style_id
+          selectedStyle: styles[i].style_id,
+          selectedSkus: styles[i].skus
         })
       } else {
         this.setState({
-          selectedStyle: styles[0].style_id
+          selectedStyle: styles[0].style_id,
+          selectedSkus: styles[i].skus
+
         })
       }
     }
@@ -123,19 +127,10 @@ class Overview extends React.Component {
 
   updateSelectedStyle(e) {
     e.preventDefault();
-    console.log("CLICK TARGET: ", e.target.alt)
     this.setState({
       selectedStyle: e.target.alt
     })
   }
-
-  // styles Carousel Object
-  // [
-  //   {
-  //     style_id: first thumbnail url
-  //   },
-  //   ...
-  // ]
 
   render() {
     return(
@@ -149,7 +144,7 @@ class Overview extends React.Component {
             <a href="dummylink.com">Read all reviews</a>
             <BasicInfo category = {this.state.category} name = {this.state.name} price = {this.state.price}/>
             <Styles styles = {this.state.styles} stylePhoto = {this.state.stylePhoto} selectedStyle = {this.state.selectedStyle}  updateSelectedStyle = {(e) => this.updateSelectedStyle(e)}/>
-            <SelectOption />
+            <SelectOption styles = {this.state.styles} selectedStyle = {this.state.selectedStyle}/>
           </article>
         </div>
         <div className = "bottomHalf">
