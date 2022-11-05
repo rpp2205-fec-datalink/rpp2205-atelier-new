@@ -205,10 +205,6 @@
 }
 
 
-
-
-
-
 .empty {
   color: black;
   background-color: white;
@@ -220,12 +216,16 @@
 }
 
 .outfit-add {
-  color: rgb(255, 182, 110);
   width: 80px;
   height: 80px;
   position: absolute;
   left: 62px;
   top: 130px;
+  opacity: .5;
+}
+
+.outfit-add:hover {
+  opacity: 1;
 }
 
 .outfit-card-price {
