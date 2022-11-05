@@ -28,8 +28,6 @@ class SelectOption extends React.Component {
   }
 
   render() {
-    console.log("00000: ", this.state.options)
-    console.log("11111: ", this.state.defaultOption)
     return(
       <div >
         <div className="dropdown-layout">

@@ -106,6 +106,43 @@ a {
   height: 100%;
   object-fit: cover;
 }
+.zoom-photo {
+  position: absolute;
+  font-size: 40px;
+  font-weight: 1000;
+  top: 1%;
+  right: 15px;
+  color: #808080;
+  z-index: 1;
+  cursor: pointer;
+}
+.dialog {
+  box-shadow: 0 8px 6px -6px black;
+  position: static;
+  left: -20%;
+  top: 10%;
+  z-index: 2;
+}
+.left-button {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 150px;
+  font-size: 55px;
+  color: #808080;
+  z-Index: 1;
+  cursor: pointer;
+}
+.right-button {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 15px;
+  font-size: 55px;
+  color: #808080;
+  z-Index: 1;
+  cursor: pointer;
+}
 
 .topHalf > .description-container {
   width:30%;
