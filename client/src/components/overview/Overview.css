@@ -9,7 +9,7 @@ a {
 
 
 .stylePhoto {
-  max-height: 200px; /* Hide Overflow; max 2 rows*/
+  max-height: 1000px; /* Hide Overflow; max 2 rows*/
   overflow: hidden; /* Hide Overflow; max 2 rows */
   display: grid;
   gap: 20px;
