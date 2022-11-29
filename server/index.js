@@ -1,7 +1,7 @@
 
 const express = require("express");
 const path = require("path");
-const port = 3000;
+const port = 8080;
 const compression = require('compression')
 const axios = require("axios");
 const apiData = require("./apiHelper.js");

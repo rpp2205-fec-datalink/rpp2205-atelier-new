@@ -32,7 +32,7 @@ class Related extends React.Component {
   componentDidMount() {
     this.startLocal();
     this.findRelated();
-    this.checkLocal();
+    // this.checkLocal();
   }
 
   componentDidUpdate(prevProps) {
@@ -68,7 +68,6 @@ class Related extends React.Component {
         isNotInOutfit = false;
       }
     }
-
     if (isNotInOutfit) {
       return axios.get('/outfit', {
         params: {

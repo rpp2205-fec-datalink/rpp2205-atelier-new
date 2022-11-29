@@ -10,10 +10,10 @@ const SliderOutfit = function(props) {
   const [currentClick, afterClick] = useState(0);
   const [sliderLeft, toggleLeft] = useState("slider-icon left");
   const [sliderRight, toggleRight] = useState("slider-icon right");
-  const [currentLength, updateLength] = useState(props.realData.length)
+  const [currentLength, updateLength] = useState(0)
 
 
-  if (props.realData.length < currentLength) {
+  if (props.realData !== null && props.realData.length < currentLength) {
     afterClick(currentClick - 1);
     updateLength(props.realData.length);
   }
@@ -53,11 +53,11 @@ const SliderOutfit = function(props) {
 
   useEffect(() => {
     updateLength(props.realData.length)
-  }, [props.realData.length])
+  }, [props.realData])
 
   useEffect(() => {
    rightCount(props.realData.length - currentClick);
-  }, [props.realData.length, currentClick])
+  }, [props.realData, currentClick])
 
   useEffect(() => {
     leftCount(currentClick);
@@ -75,6 +75,7 @@ const SliderOutfit = function(props) {
      <MdChevronLeft className={sliderLeft} onClick={() => {props.slideLeft(props.id) ; countingRight()}}/>
 
       <div className="slider-content" id={props.id}>
+        {console.log(props.realData)}
         {props.realData.map((slide) => {
           if (!slide.image) {
             slide.image = noPhoto;
